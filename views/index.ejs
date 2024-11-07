@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Note</title>
+     <script src="https://cdn.tailwindcss.com"></script> 
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+    <main class="bg-gray-100 w-screen  p-4">
+        <a href="/home" class="text-2xl font-bold flex items-center">Notes Management</a>
+        <a href="/new">
+            <button class="flex-wrap bg-blue-500 text-white rounded-md p-4 m-5">Create new note</button>
+        </a>
+        
+        <!-- <% notes.forEach(note => { %> 
+            <div class="bg-gray-200 p-4 rounded-md mt-4">
+                <h1 class="text-2xl font-bold"><%= note %></h1>
+                <a href="/edit/<%= note %>">edit</a> 
+                <a href="/delete<%=note%>">delete</a>
+            </div>
+        <% }) %> -->
+    
+            <% notes.forEach(note => { %>
+                <div class=" p-4 rounded-md flex-wrap mt-8">
+                    <h1 class="text-2xl font-bold"><%= note %></h1>
+                <%= note %>
+                <a class="text-red-500" href="/edit/<%= note %>">edit</a> 
+                <a class="text-yellow-500" href="/delete/<%= note %>">Delete</a>
+                <a class="text-purple-500 " href="/view/<%=note%>">view</a>
+           
+            <% }) %>
+      
+          
+
+    </main>
+</body>
+</html>

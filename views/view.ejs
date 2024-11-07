@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Management System</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Notes Management</h1>
+
+
+  <h2>Available Notes</h2>
+  <ul>
+    <% notes.forEach(note => { %>
+      <li>
+        <%= note %>
+        <a href="/notes/<%= note %>">View</a>
+        <a href="/edit/<%= note %>">Edit</a>
+        <a href="/delete/<%= note %>">Delete</a>
+      </li>
+    <% }) %>
+  </ul>
+
+  
+  <h2>Create a New Note</h2>
+  <form action="/new-note" method="get">
+    <input type="text" name="title" placeholder="Note Title" required>
+    <textarea name="description" placeholder="Note Content" required></textarea>
+    <button type="submit">Create Note</button>
+  </form>
+</body>
+</html>
